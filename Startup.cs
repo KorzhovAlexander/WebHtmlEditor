@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using WebHtmlEditor.Extensions;
 
 namespace WebHtmlEditor
 {
@@ -26,6 +27,8 @@ namespace WebHtmlEditor
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            // connect vue app - middleware  
+            services.AddSpaStaticFiles(options => options.RootPath = "client-app/dist");  
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -35,14 +38,22 @@ namespace WebHtmlEditor
             {
                 app.UseDeveloperExceptionPage();
             }
-
-            app.UseHttpsRedirection();
-
+            
             app.UseRouting();
 
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
+            // use middleware and launch server for Vue  
+            app.UseSpaStaticFiles();  
+            app.UseSpa(spa =>  
+            {  
+                spa.Options.SourcePath = "client-app";  
+                if (env.IsDevelopment())  
+                {
+                    spa.UseVueDevelopmentServer();  
+                }  
+            }); 
         }
     }
 }

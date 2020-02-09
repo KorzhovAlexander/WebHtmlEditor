@@ -12,13 +12,16 @@
   "dependencies": {
     "core-js": "^2.6.5",
     "vue": "^2.6.10",
+    "axios": "^0.19.2",
     "node-sass": "^4.11.0",
     "vue-router": "^3.0.1",
+    "devextreme-aspnet-data-nojquery": "^2.5.1",
     "devextreme": "19.2-stable",
     "devextreme-themebuilder": "19.2-stable",
     "devextreme-vue": "19.2-stable"
   },
   "devDependencies": {
+    "@microsoft/signalr": "^3.1.0",
     "@vue/cli-plugin-babel": "^3.12.0",
     "@vue/cli-plugin-eslint": "^3.12.0",
     "@vue/cli-service": "^3.12.0",

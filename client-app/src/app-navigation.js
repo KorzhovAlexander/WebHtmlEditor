@@ -5,6 +5,16 @@ export default [
     icon: "home"
   },
   {
+    text: "CKeditor",
+    path: "/ckeditor",
+    icon: "key"
+  },
+  {
+    text: "summernote",
+    path: "/summernote",
+    icon: "close"
+  },
+  {
     text: "Examples",
     icon: "folder",
     items: [

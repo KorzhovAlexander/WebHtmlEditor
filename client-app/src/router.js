@@ -4,6 +4,8 @@ import Router from "vue-router";
 import auth from "./auth";
 
 import Home from "./views/home";
+import Ckeditor from "./views/ckeditor";
+import Summernote from "./views/summernote";
 import Profile from "./views/profile";
 import DisplayData from "./views/display-data";
 import defaultLayout from "./layouts/side-nav-inner-toolbar";
@@ -20,6 +22,24 @@ const router = new Router({
       components: {
         layout: defaultLayout,
         content: Home
+      }
+    },
+    {
+      path: "/ckeditor",
+      name: "ckeditor",
+      meta: { requiresAuth: true },
+      components: {
+        layout: defaultLayout,
+        content: Ckeditor
+      }
+    },
+    {
+      path: "/summernote",
+      name: "summernote",
+      meta: { requiresAuth: true },
+      components: {
+        layout: defaultLayout,
+        content: Summernote
       }
     },
     {

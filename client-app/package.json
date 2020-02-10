@@ -10,15 +10,18 @@
     "postinstall": "yarn run build-themes"
   },
   "dependencies": {
-    "core-js": "^2.6.5",
-    "vue": "^2.6.10",
+    "@ckeditor/ckeditor5-build-classic": "^16.0.0",
+    "@ckeditor/ckeditor5-vue": "^1.0.1",
     "axios": "^0.19.2",
-    "node-sass": "^4.11.0",
-    "vue-router": "^3.0.1",
-    "devextreme-aspnet-data-nojquery": "^2.5.1",
+    "core-js": "^2.6.5",
     "devextreme": "19.2-stable",
+    "devextreme-aspnet-data-nojquery": "^2.5.1",
     "devextreme-themebuilder": "19.2-stable",
-    "devextreme-vue": "19.2-stable"
+    "devextreme-vue": "19.2-stable",
+    "node-sass": "^4.11.0",
+    "summernote": "^0.8.15",
+    "vue": "^2.6.10",
+    "vue-router": "^3.0.1"
   },
   "devDependencies": {
     "@microsoft/signalr": "^3.1.0",
@@ -26,11 +29,11 @@
     "@vue/cli-plugin-eslint": "^3.12.0",
     "@vue/cli-service": "^3.12.0",
     "babel-eslint": "^10.0.1",
+    "devextreme-cli": "1.1.10",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
-    "vue-template-compiler": "^2.6.10",
-    "devextreme-cli": "1.1.10",
-    "sass-loader": "^7.1.0"
+    "sass-loader": "^7.1.0",
+    "vue-template-compiler": "^2.6.10"
   },
   "eslintConfig": {
     "root": true,

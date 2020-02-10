@@ -11,6 +11,8 @@
 
     <ItemGroup>
         <Content Remove="$(SpaRoot)**" />
+        <Content Include="client-app\src\views\ckeditor.vue" />
+        <Content Include="client-app\src\views\summernote.vue" />
         <None Remove="$(SpaRoot)**" />
         <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
     </ItemGroup>
@@ -24,10 +26,6 @@
         <PackageReference Include="DevExpress.RichEdit.Export" Version="19.2.6" />
         <PackageReference Include="DevExpress.RichEdit.Export.ru" Version="19.2.6" />
         <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="3.1.1" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="Controllers" />
     </ItemGroup>
 
     <Target Name="PublishRunWebpack" AfterTargets="ComputeFilesToPublish">

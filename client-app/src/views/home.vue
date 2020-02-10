@@ -60,6 +60,7 @@
                     </DxButtonGroup>
                     <div class="value-content">{{ valueContent }}</div>
                 </div>
+                <DxButton text="Open Document" @click="onClick"/>
             </div>
         </div>
     </div>
@@ -70,12 +71,11 @@
         DxToolbar,
         DxItem
     } from 'devextreme-vue/html-editor';
-    import { DxDateBox } from 'devextreme-vue';
     import {
         DxButtonGroup,
         DxItem as DxButtonGroupItem
     } from 'devextreme-vue/button-group';
-    // import { markup } from './data.js';
+    import {DxButton} from 'devextreme-vue';
     import 'devextreme/ui/html_editor/converters/markdown';
 
     export default {
@@ -85,7 +85,7 @@
             DxItem,
             DxButtonGroup,
             DxButtonGroupItem,
-            DxDateBox
+            DxButton
         },
         data() {
             return {
@@ -95,11 +95,7 @@
                     "                    spellcheck=\"false\"\n" +
                     "                    data-marker=\"@\"\n" +
                     "                    data-mention-value=\"Kevin Carter\"\n" +
-                    "            ><h5>Hi</h5>          <DxDateBox\n" +
-                    "            :value=\"now\"\n" +
-                    "            type=\"date\"\n" +
-                    "          /><" +
-                    "/span>",
+                    "            ><h5>Hi</h5></span>",
                 sizeValues: ['8pt', '10pt', '12pt', '14pt', '18pt', '24pt', '36pt'],
                 fontValues: ['Arial', 'Courier New', 'Georgia', 'Impact', 'Lucida Console', 'Tahoma', 'Times New Roman', 'Verdana'],
                 headerValues: [false, 1, 2, 3, 4, 5],
@@ -113,8 +109,14 @@
                     displayExpr: 'text'
                 }],
                 variables: ["{FirstName}", "{LastName}", "{Company}"],
+                url:null,
 
             };
+        },
+        methods:{
+            onClick: function () {
+                window.open(`api/documents?htmlText=${this.valueContent}`)
+            }
         },
         computed: {
             editorValueType: function () {

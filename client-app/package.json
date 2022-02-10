@@ -18,7 +18,7 @@
     "devextreme-aspnet-data-nojquery": "^2.5.1",
     "devextreme-themebuilder": "19.2-stable",
     "devextreme-vue": "19.2-stable",
-    "node-sass": "^4.11.0",
+    "node-sass": "^7.0.0",
     "summernote": "^0.8.15",
     "vue": "^2.6.10",
     "vue-router": "^3.0.1"
